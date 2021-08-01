@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+
+
+{%block body_block%}
+
+<div class="container">
+    <div class="row">
+        <row class="col-4"></row>
+        <row class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    {{book.book_name}}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{book.author}}</li>
+                    <li class="list-group-item">{{book.category}}</li>
+                    <li class="list-group-item">{{book.price}}</li>
+                     <li class="list-group-item">{{book.copies}}</li>
+                </ul>
+            </div>
+        </row>
+        <row class="col-4"></row>
+    </div>
+</div>
+{%endblock%}

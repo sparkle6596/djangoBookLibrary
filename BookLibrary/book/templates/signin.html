@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>SIGNIN</h1>
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <form action="" method="post">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <button type="submit">Signin</button>
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

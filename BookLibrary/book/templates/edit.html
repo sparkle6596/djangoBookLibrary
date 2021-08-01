@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+<h1>Add book</h1>
+<form action="" method="post">
+    {%csrf_token%}
+    <div class="mb-2">
+        <label for="" >Book Name</label>
+        {{form.book_name}}
+    </div>
+    <div class="mb-2">
+        <label for="">Author</label>
+        {{form.author}}
+    </div>
+    <div class="mb-2">
+        <label for="">Category</label>
+        {{form.category}}
+    </div>
+    <div class="mb-2">
+        <label for="">Price</label>
+        {{form.price}}
+    </div>
+    <div class="mb-2">
+        <label for="">Copies</label>
+        {{form.copies}}
+    </div>
+    <div class="mb-2">
+        <input type="submit" value="update">
+    </div>
+</form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+</div>
+{%endblock%}
+</body>
+</html>

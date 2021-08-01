@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+
+
+{%block body_block%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" value="search">
+            </form>
+        </div>
+    </div>
+    <div class="row">
+    <div class="row col-2"></div>
+    <div class="row col-8">
+        <h2>Available Books</h2>
+        <table class="table" mt-5>
+            <tr>
+                <th>BookName</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Copies</th>
+                <th>Action</th>
+            </tr>
+                {%if books%}
+                {%for book in books%}
+            <tr>
+                <td>{{book.book_name}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.category}}</td>
+                <td>{{book.price}}</td>
+                <td>{{book.copies}}</td>
+                <td>
+                    <a  class="btn btn-success ms-lg-2" href="{%url 'update' book.id%}">Edit</a>
+                    <a class="btn btn-danger ms-lg-2" href="{%url 'remove' book.id%}">Delete</a>
+                    <a class="btn btn-warning ms-lg-2" href="{%url 'details' book.id%}">View</a>
+                </td>
+            </tr>
+                {%endfor%}
+                {%else%}
+            <tr>
+                <td colspan="5">
+                    <h3>NO book found</h3>
+                </td>
+            </tr>
+            {%endif%}
+        </table>
+
+    </div>
+    <div class="row col-4"></div>
+</div>
+    </div>
+
+
+{%endblock%}
